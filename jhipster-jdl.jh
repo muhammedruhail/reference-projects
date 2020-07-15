@@ -1,0 +1,10 @@
+entity Product{
+	id Long,
+    createdUser String,
+    lastModificationDate Instant,
+    lastModifiedUser String,
+    productBuyingPrice Double,
+    productName String,
+    producrSellingPrice Double
+}
+

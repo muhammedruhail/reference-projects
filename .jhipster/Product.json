@@ -1,0 +1,40 @@
+{
+    "name": "Product",
+    "fields": [
+        {
+            "fieldName": "createdUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastModificationDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lastModifiedUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productBuyingPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "productName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "producrSellingPrice",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200715054548",
+    "entityTableName": "product",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "inventoryservice",
+    "applications": "*",
+    "microserviceName": "inventoryservice"
+}

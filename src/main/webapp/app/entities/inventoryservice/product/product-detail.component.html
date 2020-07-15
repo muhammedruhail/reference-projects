@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="product">
+            <h2><span jhiTranslate="inventoryserviceApp.inventoryserviceProduct.detail.title">Product</span> {{product.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="inventoryserviceApp.inventoryserviceProduct.createdUser">Created User</span></dt>
+                <dd>
+                    <span>{{product.createdUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryserviceApp.inventoryserviceProduct.lastModificationDate">Last Modification Date</span></dt>
+                <dd>
+                    <span>{{product.lastModificationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryserviceApp.inventoryserviceProduct.lastModifiedUser">Last Modified User</span></dt>
+                <dd>
+                    <span>{{product.lastModifiedUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryserviceApp.inventoryserviceProduct.productBuyingPrice">Product Buying Price</span></dt>
+                <dd>
+                    <span>{{product.productBuyingPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryserviceApp.inventoryserviceProduct.productName">Product Name</span></dt>
+                <dd>
+                    <span>{{product.productName}}</span>
+                </dd>
+                <dt><span jhiTranslate="inventoryserviceApp.inventoryserviceProduct.producrSellingPrice">Producr Selling Price</span></dt>
+                <dd>
+                    <span>{{product.producrSellingPrice}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product', product.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
