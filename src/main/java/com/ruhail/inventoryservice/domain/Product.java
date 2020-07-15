@@ -22,14 +22,8 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "created_user")
-    private String createdUser;
-
-    @Column(name = "last_modification_date")
-    private Instant lastModificationDate;
-
-    @Column(name = "last_modified_user")
-    private String lastModifiedUser;
+    @Column(name = "created_date")
+    private Instant createdDate;
 
     @Column(name = "product_buying_price")
     private Double productBuyingPrice;
@@ -49,43 +43,17 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public String getCreatedUser() {
-        return createdUser;
+    public Instant getCreatedDate() {
+        return createdDate;
     }
 
-    public Product createdUser(String createdUser) {
-        this.createdUser = createdUser;
+    public Product createdDate(Instant createdDate) {
+        this.createdDate = createdDate;
         return this;
     }
 
-    public void setCreatedUser(String createdUser) {
-        this.createdUser = createdUser;
-    }
-
-    public Instant getLastModificationDate() {
-        return lastModificationDate;
-    }
-
-    public Product lastModificationDate(Instant lastModificationDate) {
-        this.lastModificationDate = lastModificationDate;
-        return this;
-    }
-
-    public void setLastModificationDate(Instant lastModificationDate) {
-        this.lastModificationDate = lastModificationDate;
-    }
-
-    public String getLastModifiedUser() {
-        return lastModifiedUser;
-    }
-
-    public Product lastModifiedUser(String lastModifiedUser) {
-        this.lastModifiedUser = lastModifiedUser;
-        return this;
-    }
-
-    public void setLastModifiedUser(String lastModifiedUser) {
-        this.lastModifiedUser = lastModifiedUser;
+    public void setCreatedDate(Instant createdDate) {
+        this.createdDate = createdDate;
     }
 
     public Double getProductBuyingPrice() {
@@ -152,9 +120,7 @@ public class Product implements Serializable {
     public String toString() {
         return "Product{" +
             "id=" + getId() +
-            ", createdUser='" + getCreatedUser() + "'" +
-            ", lastModificationDate='" + getLastModificationDate() + "'" +
-            ", lastModifiedUser='" + getLastModifiedUser() + "'" +
+            ", createdDate='" + getCreatedDate() + "'" +
             ", productBuyingPrice=" + getProductBuyingPrice() +
             ", productName='" + getProductName() + "'" +
             ", producrSellingPrice=" + getProducrSellingPrice() +

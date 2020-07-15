@@ -59,15 +59,14 @@ export class ProductService {
 
   protected convertDateFromClient(product: IProduct): IProduct {
     const copy: IProduct = Object.assign({}, product, {
-      lastModificationDate:
-        product.lastModificationDate != null && product.lastModificationDate.isValid() ? product.lastModificationDate.toJSON() : null
+      createdDate: product.createdDate != null && product.createdDate.isValid() ? product.createdDate.toJSON() : null
     });
     return copy;
   }
 
   protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
     if (res.body) {
-      res.body.lastModificationDate = res.body.lastModificationDate != null ? moment(res.body.lastModificationDate) : null;
+      res.body.createdDate = res.body.createdDate != null ? moment(res.body.createdDate) : null;
     }
     return res;
   }
@@ -75,7 +74,7 @@ export class ProductService {
   protected convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
     if (res.body) {
       res.body.forEach((product: IProduct) => {
-        product.lastModificationDate = product.lastModificationDate != null ? moment(product.lastModificationDate) : null;
+        product.createdDate = product.createdDate != null ? moment(product.createdDate) : null;
       });
     }
     return res;

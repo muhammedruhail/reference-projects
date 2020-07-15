@@ -1,0 +1,45 @@
+{
+    "name": "Stock",
+    "fields": [
+        {
+            "fieldName": "stockBuyingPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "grossProfit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "units",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "stock"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "category",
+            "otherEntityName": "category",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "stock"
+        }
+    ],
+    "changelogDate": "20200715122844",
+    "entityTableName": "stock",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "inventoryservice",
+    "applications": "*",
+    "microserviceName": "inventoryservice"
+}

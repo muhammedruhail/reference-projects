@@ -15,7 +15,7 @@ import { ProductService } from './product.service';
 export class ProductUpdateComponent implements OnInit {
   product: IProduct;
   isSaving: boolean;
-  lastModificationDate: string;
+  createdDate: string;
 
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) {}
 
@@ -23,8 +23,7 @@ export class ProductUpdateComponent implements OnInit {
     this.isSaving = false;
     this.activatedRoute.data.subscribe(({ product }) => {
       this.product = product;
-      this.lastModificationDate =
-        this.product.lastModificationDate != null ? this.product.lastModificationDate.format(DATE_TIME_FORMAT) : null;
+      this.createdDate = this.product.createdDate != null ? this.product.createdDate.format(DATE_TIME_FORMAT) : null;
     });
   }
 
@@ -34,7 +33,7 @@ export class ProductUpdateComponent implements OnInit {
 
   save() {
     this.isSaving = true;
-    this.product.lastModificationDate = this.lastModificationDate != null ? moment(this.lastModificationDate, DATE_TIME_FORMAT) : null;
+    this.product.createdDate = this.createdDate != null ? moment(this.createdDate, DATE_TIME_FORMAT) : null;
     if (this.product.id !== undefined) {
       this.subscribeToSaveResponse(this.productService.update(this.product));
     } else {

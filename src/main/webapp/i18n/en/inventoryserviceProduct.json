@@ -16,9 +16,7 @@
       "detail": {
         "title": "Product"
       },
-      "createdUser": "Created User",
-      "lastModificationDate": "Last Modification Date",
-      "lastModifiedUser": "Last Modified User",
+      "createdDate": "Created Date",
       "productBuyingPrice": "Product Buying Price",
       "productName": "Product Name",
       "producrSellingPrice": "Producr Selling Price"
