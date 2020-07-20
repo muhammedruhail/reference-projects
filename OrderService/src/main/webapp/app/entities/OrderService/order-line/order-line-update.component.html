@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-order-line-heading" jhiTranslate="orderServiceApp.orderServiceOrderLine.home.createOrEditLabel">Create or edit a Order Line</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!orderLine.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="orderLine.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="orderServiceApp.orderServiceOrderLine.orderDate" for="field_orderDate">Order Date</label>
+                    <div class="d-flex">
+                        <input id="field_orderDate" type="datetime-local" class="form-control" name="orderDate" [(ngModel)]="orderDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="orderServiceApp.orderServiceOrderLine.orderStatus" for="field_orderStatus">Order Status</label>
+                    <input type="checkbox" class="form-control" name="orderStatus" id="field_orderStatus"
+                        [(ngModel)]="orderLine.orderStatus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="orderServiceApp.orderServiceOrderLine.productId" for="field_productId">Product Id</label>
+                    <input type="number" class="form-control" name="productId" id="field_productId"
+                        [(ngModel)]="orderLine.productId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="orderServiceApp.orderServiceOrderLine.customerId" for="field_customerId">Customer Id</label>
+                    <input type="number" class="form-control" name="customerId" id="field_customerId"
+                        [(ngModel)]="orderLine.customerId" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
