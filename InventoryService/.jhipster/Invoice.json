@@ -1,0 +1,33 @@
+{
+    "name": "Invoice",
+    "fields": [
+        {
+            "fieldName": "customerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grossTotal",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "orderLine",
+            "otherEntityName": "orderLine",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "invoice"
+        }
+    ],
+    "changelogDate": "20200720101233",
+    "entityTableName": "invoice",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "inventoryservice",
+    "applications": "*",
+    "microserviceName": "inventoryservice"
+}

@@ -1,0 +1,22 @@
+
+entity OrderLine{
+	id Long,
+    orderDate Instant,
+    orderStatus Boolean,
+    productId Long,
+    customerId Long
+}
+
+entity Invoice{
+	id Long,
+    customerName String,
+    grossTotal Double
+}
+
+relationship OneToOne{
+	Invoice{orderLine} to OrderLine
+}
+paginate * with pagination
+dto * with mapstruct
+service all with serviceImpl
+

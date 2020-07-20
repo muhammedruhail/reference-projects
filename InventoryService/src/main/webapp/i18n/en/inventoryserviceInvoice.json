@@ -1,0 +1,24 @@
+{
+  "inventoryserviceApp": {
+    "inventoryserviceInvoice": {
+      "home": {
+        "title": "Invoices",
+        "createLabel": "Create a new Invoice",
+        "createOrEditLabel": "Create or edit a Invoice",
+        "search": "Search for Invoice"
+      },
+      "created": "A new Invoice is created with identifier {{ param }}",
+      "updated": "A Invoice is updated with identifier {{ param }}",
+      "deleted": "A Invoice is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Invoice {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice"
+      },
+      "customerName": "Customer Name",
+      "grossTotal": "Gross Total",
+      "orderLine": "Order Line"
+    }
+  }
+}

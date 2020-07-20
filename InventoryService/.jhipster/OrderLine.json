@@ -1,0 +1,32 @@
+{
+    "name": "OrderLine",
+    "fields": [
+        {
+            "fieldName": "orderDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "orderStatus",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "productId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "customerId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200720101232",
+    "entityTableName": "order_line",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "inventoryservice",
+    "applications": "*",
+    "microserviceName": "inventoryservice"
+}
